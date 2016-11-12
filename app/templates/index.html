@@ -8,22 +8,27 @@
 {% import "bootstrap/utils.html" as utils %}
 
 
-{# Inside the ``content`` is where you should place most of your own stuff.
-   This will keep scripts at the page end and a navbar you add on later
-   intact. #}
 {% block content %}
-  <div class="container">
-  {%- with messages = get_flashed_messages(with_categories=True) %}
-  {%- if messages %}
-    <div class="row">
-      <div class="col-md-12">
-        {{utils.flashed_messages(messages)}}
-      </div>
+    <div class="container">
+        {%- with messages = get_flashed_messages(with_categories=True) %}
+            {%- if messages %}
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ utils.flashed_messages(messages) }}
+                    </div>
+                </div>
+            {%- endif %}
+        {%- endwith %}
+        <div class="jumbotron">
+            <h2>Lorem Ipsum - Flask Style
+                <small>without any adverts!</small>
+            </h2>
+        </div>
+
+
+        <div class="embed-responsive embed-responsive-16by9">
+             <iframe id="htmlFrame" name="htmlFrame" src="/api/v1/paragraphs/5/text" height="100%"
+                     style="position:absolute;" frameborder="0" scrolling="auto" class="embed-responsive-item"></iframe>
+        </div>
     </div>
-  {%- endif %}
-  {%- endwith %}
-    <div class="jumbotron">
-      <h2>Lorem Ipsum - Flask Style <small>without any adverts!</small></h2>
-    </div>
-   </div>
 {%- endblock %}
