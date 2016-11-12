@@ -6,6 +6,7 @@
    utils module here to automatically render Flask's flashed messages in a
    bootstrap friendly manner #}
 {% import "bootstrap/utils.html" as utils %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 
 {% block content %}
@@ -25,10 +26,25 @@
             </h2>
         </div>
 
+        <form class="form-inline" method="post" role="form">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_errors(form, hiddens="only") }}
+            {{ wtf.form_field(form.resource) }}
+            {{ wtf.form_field(form.count) }}
+            {{ wtf.form_field(form.response_format) }}
+            <button type="submit" class="btn btn-default" title="Refresh"><span class="glyphicon glyphicon-refresh"></span></button>
+        </form>
 
-        <div class="embed-responsive embed-responsive-16by9">
-             <iframe id="htmlFrame" name="htmlFrame" src="/api/v1/paragraphs/5/text" height="100%"
-                     style="position:absolute;" frameborder="0" scrolling="auto" class="embed-responsive-item"></iframe>
+        <div class="row">
+            <h4>Equivalent API call:</h4>
+            <code><a href="{{ external_rest_url }}" target="_blank">{{ external_rest_url }}</a></code>
+        </div>
+
+        <div class="row">
+            <div class="embed-responsive embed-responsive-16by9">
+                 <iframe id="htmlFrame" name="htmlFrame" src="{{ iframe_source_url }}"
+                         style="overflow:hidden; display:block; position: absolute; height: 100%; width: 100%" frameborder="0" scrolling="auto" class="embed-responsive-item"></iframe>
+            </div>
         </div>
     </div>
 {%- endblock %}
