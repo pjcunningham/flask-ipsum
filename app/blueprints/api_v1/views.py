@@ -9,7 +9,7 @@ import flask_restful
 API_VERSION_V1 = 1
 API_VERSION = API_VERSION_V1
 
-api_v1_bp = Blueprint('api', __name__)
+api_v1_bp = Blueprint('api_v1', __name__)
 api_v1 = flask_restful.Api(api_v1_bp)
 
 api_v1.add_resource(Sentences, '/sentences/<int:count>/<string:response_format>')
