@@ -5,3 +5,7 @@ body { padding-top: 70px; }
   padding-top: 1.0em;
   padding-bottom: 1.0em;
 }
+
+form {
+  margin-bottom: 1.0em;
+}
