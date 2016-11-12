@@ -7,6 +7,8 @@ from flask_appconfig import AppConfig
 
 from .blueprints.frontend.views import frontend
 from .ext import nav, bootstrap, debug
+from app.utils.renderers import InverseRenderer
+from flask_nav import register_renderer
 
 
 def create_app(configfile=None):
@@ -35,6 +37,7 @@ def create_app(configfile=None):
 
     # We initialize the navigation as well
     nav.init_app(app)
+    register_renderer(app, 'inverse', InverseRenderer)
 
     # REST V1
     from app.blueprints.api_v1.views import api_v1_bp
