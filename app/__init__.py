@@ -6,7 +6,7 @@ from flask import Flask
 from flask_appconfig import AppConfig
 
 from .blueprints.frontend.views import frontend
-from .ext import nav, bootstrap, debug
+from .ext import nav, bootstrap, debug, misaka
 from app.utils.renderers import InverseRenderer
 from flask_nav import register_renderer
 
@@ -23,6 +23,9 @@ def create_app(configfile=None):
 
     # Install our Bootstrap extension
     bootstrap.init_app(app)
+
+    # Install our Misaka (Markdown) extension
+    misaka.init_app(app)
 
     debug.init_app(app)
 
