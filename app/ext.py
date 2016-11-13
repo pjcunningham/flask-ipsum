@@ -10,3 +10,6 @@ bootstrap=Bootstrap()
 
 from flask_debug import Debug
 debug=Debug()
+
+from flask_misaka import Misaka
+misaka = Misaka()
