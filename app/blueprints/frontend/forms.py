@@ -22,7 +22,7 @@ class IpsumV1Form(FlaskForm):
     # count = IntegerField('Count', validators=[InputRequired()])
     count = SelectField(
         'Count',
-        choices=[(i, str(i)) for i in range(10, 100, 10)],
+        choices=[(i, str(i)) for i in [5, 10, 25, 75, 100]],
         coerce=int,
         render_kw={'title': 'Quantity of resources to return'}
     )
