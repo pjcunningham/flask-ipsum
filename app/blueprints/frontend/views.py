@@ -44,3 +44,7 @@ def index():
     return render_template('index.html', form=form, iframe_source_url=rest_url, external_rest_url=external_rest_url)
 
 
+@frontend.route('/about/', )
+def about():
+    return render_template('about.html')
+
