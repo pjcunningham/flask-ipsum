@@ -10,7 +10,14 @@ from app.blueprints.frontend.forms import IpsumV1Form
 
 frontend = Blueprint('frontend', __name__)
 
-nav.register_element('frontend_top', Navbar(View('Lorem Ipsum', '.index'), View('Home', '.index')))
+nav.register_element(
+    'frontend_top',
+    Navbar(
+        View('Lorem Ipsum', '.index'),
+        View('Home', '.index'),
+        View('About', '.about')
+    )
+)
 
 
 @frontend.route('/', methods=['GET', 'POST'])
