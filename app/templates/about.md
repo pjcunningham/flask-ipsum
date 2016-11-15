@@ -10,5 +10,7 @@
 * [flask-restful](http://flask-restful.readthedocs.io/)
 * [lorumipsum](http://pythonhosted.org/loremipsum/) 
 
-### Hosted on PythonAnywhere
+### Hosting
+
+[PythonAnywhere](https://www.pythonanywhere.com/) 
 
