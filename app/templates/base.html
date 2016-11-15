@@ -4,6 +4,13 @@
 
 {% import "bootstrap/fixes.html" as fixes %}
 
+{% block metas %}
+    {{ super() }}
+    <meta name="description" content="Lorem Ipsum generator Flask style advert free with a REST API." />
+    <meta name="keywords" content="Lorem Ipsum, Generator, Python, Flask, REST, API, PythonAnywhere" />
+
+{% endblock metas %}
+
 {% block head %}
 {{super()}}
 {{fixes.ie8()}}
