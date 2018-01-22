@@ -12,5 +12,5 @@
 
 ### Hosting
 
-[PythonAnywhere](https://www.pythonanywhere.com/) 
+[Linode](https://www.linode.com/?r=6feab0f6eb22e3b3aa50f382641bebbab78bf993)
 
